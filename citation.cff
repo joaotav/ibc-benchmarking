@@ -3,6 +3,13 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Chervinski"
   given-names: "João Otávio"
+- family-names: "Kreutz"
+  given-names: "Diego"
+- family-names: "Yu"
+  given-names: "Jiangshan"
+- family-names: "Xu"
+  given-names: "Xiwei"
+  
 title: "IBC Performance Analysis Tool"
 version: 1.0.0
 date-released: 14-Apr-2023
