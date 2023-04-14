@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Chervinski"
+  given-names: "João Otávio"
+title: "IBC Performance Analysis Tool"
+version: 1.0.0
+date-released: 2023-04-14
+url: "https://github.com/joaotav/ibc-benchmarking"
