@@ -4,5 +4,5 @@ The dataset is available at: https://drive.google.com/drive/folders/1f3t4Qf_mC2a
 
 A preprint version is available at: https://arxiv.org/abs/2303.10844
 
-We will be updating the tool and releasing documentation soon.
+**We will be updating the tool and releasing documentation soon.**
 
