@@ -69,5 +69,158 @@ This script must be executed in a machine together with one validator node for e
 ## Benchmark output:
 The tool generates a file called "benchmarking_report.txt" in the specified output directory. This file contains a performance report generated based on the execution of the specified workload.
 
+### Sample output:
+
+```
+[+] Benchmark configuration summary:
+
+ Source chain: blockchain0 
+ Destination chain: blockchain1
+ Number of validators in each chain: 5
+ Number of user accounts: 10
+ Transactions submitted per user: 50
+ Total number of transactions: 500
+ Transfer messages per transaction: 100
+ Total number of transfer messages: 50000
+
+ IBC transfers submission (time elapsed): 5m 18s
+ Time waiting for empty blocks at the end of benchmark: 0m 1s
+ Blockchain data collection (time elapsed): 7m 46s
+ Total time elapsed: 13m 5s
+
+----------------------------------------------------------------------
+[+] Transaction distribution analysis for blockchain0:
+
+ 0 tx(s): 1 block(s)
+ 10 tx(s): 29 block(s)
+ 19 tx(s): 1 block(s)
+ 21 tx(s): 17 block(s)
+ 23 tx(s): 1 block(s)
+ 25 tx(s): 1 block(s)
+ 26 tx(s): 1 block(s)
+
+----------------------------------------------------------------------
+[+] Transaction distribution analysis for blockchain1:
+
+ 0 tx(s): 26 block(s)
+ 2 tx(s): 1 block(s)
+ 9 tx(s): 1 block(s)
+ 11 tx(s): 20 block(s)
+ 16 tx(s): 1 block(s)
+ 17 tx(s): 1 block(s)
+
+----------------------------------------------------------------------
+[+] Throughput analysis for chain 'blockchain0':
+
+ Blocks finalized: 51
+
+ Avg. block time: 6.302 seconds
+ Number of empty blocks: 1 (1.96%)
+
+ Avg. number of txs per block (counting empty blocks): 14.51
+ Avg. number of txs per second(transfer, recv, ack): 2.35
+
+ Avg. number of messages per tx: 97.30
+ Avg. number of messages per block (counting empty blocks): 1411.76
+ Avg. number of messages per second (transfer, recv, ack, timeout): 228.50
+ Avg. number of transfers per second: 158.68
+
+
+----------------------------------------------------------------------
+[+] Throughput analysis for chain 'blockchain1':
+
+ Blocks finalized: 50
+
+ Avg. block time: 6.322 seconds
+ Number of empty blocks: 26 (52.00%)
+
+ Avg. number of txs per block (counting empty blocks): 5.28
+ Avg. number of txs per second(transfer, recv, ack): 0.85
+
+ Avg. number of messages per tx: 90.91
+ Avg. number of messages per block (counting empty blocks): 480.00
+ Avg. number of messages per second (transfer, recv, ack, timeout): 77.47
+ Avg. number of transfers per second: 0.00
+
+
+----------------------------------------------------------------------
+[+] Round trip time analysis for chains 'blockchain0 -> blockchain1':
+
+ Average round trip time: 178.920s
+ Shortest round trip time: 163.744s
+ Longest round trip time: 188.840s
+
+----------------------------------------------------------------------
+[+] Success rate analysis for channel 'blockchain0 -> blockchain1':
+
+ IBC transfers submitted to 'blockchain0': 50000
+ 'Transfer' messages committed to 'blockchain0': 50000
+ 'Receive' messages committed to 'blockchain1': 24000
+ 'Acknowledgement' messages committed to 'blockchain0': 22000
+ 'Timeout' messages committed' to 'blockchain0' (source chain): 0
+
+ Transfers completed (transfer, recv, ack): 22000 (44.00%)
+ Transfers partially completed (transfer, recv): 2000 (4.00%)
+ Transfers only initiated (transfer): 26000 (52.00%)
+ Transfers not initiated (submitted but not committed): 0 (0.00%)
+ Timed out transfers: 0 (0.00%)
+
+----------------------------------------------------------------------
+[+] IBC messages confirmation latency analysis for chains 'blockchain0 -> blockchain1':
+
+ Avg. transfer message confirmation latency: 6.311s
+ Shortest transfer latency observed: 5.131s
+ Longest transfer latency observed: 7.855s
+
+ Avg. recv message confirmation latency: 12.190s
+ Shortest recv message confirmation latency: 6.386s
+ Longest recv message confirmation latency: 90.453s
+
+ Avg. acknowledgement message confirmation latency: 8.431s
+ Shortest acknowledgement message confirmation latency: 6.208s
+ Longest acknowledgement message confirmation latency: 10.349s
+
+----------------------------------------------------------------------
+[+] Data analysis for chain 'blockchain0':
+
+ Collective size of all blocks (excl. empty blocks at the end): 37.24 MB
+ Avg. block size (excl. empty blocks at the end): 747.81 kB
+ Number of transactions committed to the blockchain: 740
+ Number of messages committed in the blockchain: 72000
+
+ Number of transactions containing transfer messages on blockchain0: 500
+ Number of transfer messages on blockchain0: 50000
+
+ Number of transactions containing recv messages on blockchain0: 0
+ Number of recv messages on blockchain0: 0
+
+ Number of transactions containing ack messages on blockchain0: 240
+ Number of ack messages on blockchain0: 22000
+
+ Number of transactions containing timeout messages on blockchain0: 0
+ Number of timeout messages on blockchain0: 0
+
+----------------------------------------------------------------------
+[+] Data analysis for chain 'blockchain1':
+
+ Collective size of all blocks (excl. empty blocks at the end): 30.07 MB
+ Avg. block size (excl. empty blocks at the end): 615.79 kB
+ Number of transactions committed to the blockchain: 264
+ Number of messages committed in the blockchain: 24000
+
+ Number of transactions containing transfer messages on blockchain1: 0
+ Number of transfer messages on blockchain1: 0
+
+ Number of transactions containing recv messages on blockchain1: 264
+ Number of recv messages on blockchain1: 24000
+
+ Number of transactions containing ack messages on blockchain1: 0
+ Number of ack messages on blockchain1: 0
+
+ Number of transactions containing timeout messages on blockchain1: 0
+ Number of timeout messages on blockchain1: 0
+
+----------------------------------------------------------------------
+```
 
 
