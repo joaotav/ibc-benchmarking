@@ -13,7 +13,8 @@ The dataset generated through the experiments discussed in the paper are availab
 - Rust compiler v1.6.0
 - Hermes Relayer v0.15.0 (https://github.com/informalsystems/hermes)
 
-***Those prerequisites can be installed by running the install.sh script.***
+> [!TIP]
+> Those prerequisites can be installed by running the install.sh script.
 
 
 ## Scripts:
@@ -21,8 +22,10 @@ The dataset generated through the experiments discussed in the paper are availab
 First, this script sets up two Cosmos Gaia blockchains with funded user accounts. Then, it uses ssh to run a set of validator nodes for each of them on remote machines.
 After starting the blockchains and synchronizing the nodes it establishes an unordered IBC channel between both blockchains using the Hermes Relayer.
 
-***OBS:*** This file needs to be modified to include the address of the remote machines used for validator nodes. The prerequisites for the blockchains must be installed in all remote machines.
+> [!IMPORTANT]
+> This file needs to be modified to include the address of the remote machines used for validator nodes. The prerequisites for the blockchains must be installed in all remote machines.
 
+ 
 ***Usage:*** ./setup_chains.sh -n <NUMBER_OF_NODES> -a <FUNDED_ACCOUNTS> -t [TIMEOUT_COMMIT]
 
 ***Options:***   
@@ -50,10 +53,13 @@ This script must be executed in a machine together with one validator node for e
   --tx-timeout&emsp;               [Optional] Specify how many new blocks can be created before a cross-chain transfer times out (default: 25).  
   --transaction-analysis&emsp;     [Optional] Enables analysis of transaction and IBC message sizes (slower).  
   
-***OBS:*** --transaction-analysis is currently unavailable in favor of decreasing the overall time to complete the default benchmarking mode.
+> [!NOTE]
+> The option --transaction-analysis is currently unavailable as it requires additional logic that increases the completion time of default benchmarking mode given the current code structure.
 
 ***Example:*** ./benchmark.sh -S 'localhost:26657' -D 'localhost:36657' -u 10 -t 25 -m 20 -o 'benchmarking_test'
 
-### Outputs:
+## Benchmark output:
 The tool generates a file called "benchmarking_report.txt" in the specified output directory. This file contains a performance report generated based on the execution of the specified workload.
+
+
 
