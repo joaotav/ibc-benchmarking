@@ -27,7 +27,7 @@ After starting the blockchains and synchronizing the nodes it establishes an uno
 
  
 **Usage:** 
->  ./setup_chains.sh -n <NUMBER_OF_NODES> -a <FUNDED_ACCOUNTS> -t [TIMEOUT_COMMIT]
+`./setup_chains.sh -n <NUMBER_OF_NODES> -a <FUNDED_ACCOUNTS> -t [TIMEOUT_COMMIT]`
 
 **Options:** 
 
@@ -38,7 +38,7 @@ After starting the blockchains and synchronizing the nodes it establishes an uno
 ```
 
 **Example:** 
->  ./setup_chains.sh -n 5 -a 10 -t 5
+`./setup_chains.sh -n 5 -a 10 -t 5`
 
 ### benchmark.sh:
 This script conducts a performance evaluation of cross-chain communication using the previously established IBC channel.
@@ -46,7 +46,7 @@ The evaluation workload is composed of cross-chain fungible token transfers (htt
 This script must be executed in a machine together with one validator node for each blockchain. This is required to retrieve transaction data through RPC.
 
 **Usage:** 
->  ./benchmark.sh -S <SRC_CHAIN_ADDR> -D <DST_CHAIN_ADDR> -u <NUM_USERS> -t <NUM_TRANSACTIONS> -m <NUM_MESSAGES> -o <OUTPUT_DIR>
+`./benchmark.sh -S <SRC_CHAIN_ADDR> -D <DST_CHAIN_ADDR> -u <NUM_USERS> -t <NUM_TRANSACTIONS> -m <NUM_MESSAGES> -o <OUTPUT_DIR>`
 
 **Options:**  
 ```
@@ -64,7 +64,7 @@ This script must be executed in a machine together with one validator node for e
 > The option --transaction-analysis is currently unavailable as it requires additional logic that increases the completion time of default benchmarking mode given the current code structure.
 
 **Example:** 
->  ./benchmark.sh -S 'localhost:26657' -D 'localhost:36657' -u 10 -t 25 -m 20 -o 'benchmarking_test'
+`./benchmark.sh -S 'localhost:26657' -D 'localhost:36657' -u 10 -t 25 -m 20 -o 'benchmarking_test'`
 
 ## Benchmark output:
 The tool generates a file called "benchmarking_report.txt" in the specified output directory. This file contains a performance report generated based on the execution of the specified workload.
